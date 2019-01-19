@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Desafio WeCast</string>
+
+    <string name="label_no_content">No Data</string>
+    <string name="label_retry">Try Again</string>
+    <string name="title_recycler_view">Desafio WeCast</string>
+</resources>
