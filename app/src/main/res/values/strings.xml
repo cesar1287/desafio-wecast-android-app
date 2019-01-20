@@ -4,4 +4,10 @@
     <string name="label_no_content">No Data</string>
     <string name="label_retry">Try Again</string>
     <string name="title_recycler_view">Desafio WeCast</string>
+    <string name="loading">Carregando…</string>
+    <string name="file_not_found">Arquivo não encontrado</string>
+    <string name="now_playing">Executando:</string>
+    <string name="error_load_media_player">Erro ao carregar o áudio</string>
+    <string name="action_download">Download</string>
+    <string name="description_download">Podcast</string>
 </resources>

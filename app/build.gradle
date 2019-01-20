@@ -10,7 +10,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "cesar1287.com.github.desafiowecast"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -48,6 +48,8 @@ dependencies {
 
     //components
     implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     kapt "com.github.bumptech.glide:compiler:${versions.glide}"
 
     testImplementation 'junit:junit:4.12'

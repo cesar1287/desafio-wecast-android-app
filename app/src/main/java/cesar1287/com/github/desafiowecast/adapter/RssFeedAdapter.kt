@@ -9,8 +9,9 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import cesar1287.com.github.desafiowecast.R
 import cesar1287.com.github.desafiowecast.utils.GlideApp
-import cesar1287.com.github.desafiowecast.utils.KEY_EXTRA_RSS_ITEM
-import cesar1287.com.github.desafiowecast.view.PlayerActivity
+import cesar1287.com.github.desafiowecast.utils.KEY_EXTRA_AUDIO_URL
+import cesar1287.com.github.desafiowecast.utils.KEY_EXTRA_TITLE_URL
+import cesar1287.com.github.desafiowecast.view.URLMediaPlayerActivity
 import kotlinx.android.synthetic.main.item_rss.view.*
 import me.toptas.rssconverter.RssItem
 
@@ -37,8 +38,9 @@ class RssFeedAdapter(private var context: Context, private var list: List<RssIte
             itemView.number.text = "${position+1}"
 
             itemView.rssItemLayout.setOnClickListener {
-                val intent = Intent(context, PlayerActivity::class.java)
-                intent.putExtra(KEY_EXTRA_RSS_ITEM, rssItem)
+                val intent = Intent(context, URLMediaPlayerActivity::class.java)
+                intent.putExtra(KEY_EXTRA_AUDIO_URL, rssItem.enclosures?.first()?.link)
+                intent.putExtra(KEY_EXTRA_TITLE_URL, rssItem.title)
                 context.startActivity(intent)
             }
 
