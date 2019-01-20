@@ -2,7 +2,6 @@ package cesar1287.com.github.desafiowecast.view
 
 import android.Manifest
 import android.app.DownloadManager
-import android.app.ProgressDialog
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
@@ -83,10 +82,6 @@ class URLMediaPlayerActivity : AppCompatActivity() {
                 // media player asynchronous preparation
                 mediaPlayer.prepareAsync()
 
-                // create a progress dialog (waiting media player preparation)
-                val dialog = ProgressDialog.show(this@URLMediaPlayerActivity, "",
-                    getString(R.string.loading), true, false)
-
                 /// Load cover image (we use Glide Library)
                 // Get image view
                 GlideApp.with(applicationContext).load(ContextCompat.getDrawable(this, R.drawable.mrg_itunes))
@@ -101,8 +96,7 @@ class URLMediaPlayerActivity : AppCompatActivity() {
                     //update seekbar
                     mRunnable.run()
 
-                    //dismiss dialog
-                    dialog.dismiss()
+                    animation_view.visibility = View.GONE
                 }
             } ?: run {
                 finish()
