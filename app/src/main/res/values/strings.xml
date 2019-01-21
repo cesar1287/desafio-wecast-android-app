@@ -10,4 +10,6 @@
     <string name="error_load_media_player">Erro ao carregar o áudio</string>
     <string name="action_download">Download</string>
     <string name="description_download">Podcast</string>
+    <string name="hot">Em alta</string>
+    <string name="last">Últimos</string>
 </resources>

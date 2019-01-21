@@ -1,92 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.core.widget.NestedScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:context=".view.MainActivity">
+        tools:context=".view.MainActivity"
+        android:fillViewport="true"
+>
 
     <RelativeLayout
-            android:id="@+id/errorLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone">
+    >
 
-        <ImageView
-                android:id="@+id/iconError"
-                app:srcCompat="@drawable/ic_baseline_error_outline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@id/errorMessage"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/minimumMargin"/>
-
-        <TextView
-                android:id="@+id/errorMessage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/minimumMargin"
-                android:layout_marginStart="@dimen/defaultMargin"
-                android:layout_marginEnd="@dimen/defaultMargin"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_centerInParent="true"/>
-
-        <Button
-                android:id="@+id/buttonRetry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_retry"
-                android:textColor="@color/black"
-                android:layout_below="@id/errorMessage"
-                android:layout_marginTop="@dimen/minimumMargin"
-                android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
-
-    <TextView
-            android:id="@+id/no_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textSize="16sp"
-            android:text="@string/label_no_content"
-            android:textColor="@color/black"
-            android:visibility="gone"/>
-
-    <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/progressCircular"
-            android:layout_width="240dp"
-            android:layout_height="160dp"
-            android:layout_centerInParent="true"
-            app:lottie_rawRes="@raw/trail_loading"
-            app:lottie_loop="true"
-            app:lottie_autoPlay="true"/>
-
-    <RelativeLayout
-            android:id="@+id/contentLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-        <TextView
-                android:id="@+id/titleRecyclerView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/minimumMargin"
-                android:layout_marginEnd="@dimen/defaultMargin"
-                android:layout_marginTop="@dimen/defaultMargin"
-                android:layout_marginBottom="@dimen/defaultMargin"
-                android:text="@string/title_recycler_view"
-                android:textColor="@color/black"
-        />
-
-        <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+        <RelativeLayout
+                android:id="@+id/errorLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/titleRecyclerView"
-        />
+                android:visibility="gone">
+
+            <ImageView
+                    android:id="@+id/iconError"
+                    app:srcCompat="@drawable/ic_baseline_error_outline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/errorMessage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/minimumMargin"/>
+
+            <TextView
+                    android:id="@+id/errorMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/minimumMargin"
+                    android:layout_marginStart="@dimen/defaultMargin"
+                    android:layout_marginEnd="@dimen/defaultMargin"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center"
+            />
+
+            <Button
+                    android:id="@+id/buttonRetry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_retry"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/errorMessage"
+                    android:layout_marginTop="@dimen/minimumMargin"
+                    android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/no_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"
+                android:text="@string/label_no_content"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+
+        <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/progressCircular"
+                android:layout_width="240dp"
+                android:layout_height="160dp"
+                android:layout_centerInParent="true"
+                app:lottie_rawRes="@raw/trail_loading"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"/>
+
+        <RelativeLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+            <TextView
+                    android:id="@+id/hot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hot"
+                    android:textSize="22sp"
+                    android:layout_marginTop="@dimen/defaultMargin"
+                    android:layout_marginStart="@dimen/defaultMargin"
+            />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hot"
+            />
+
+            <TextView
+                    android:id="@+id/last"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recyclerViewHorizontal"
+                    android:layout_marginStart="@dimen/defaultMargin"
+                    android:text="@string/last"
+                    android:textSize="22sp"
+            />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/last"
+                    android:layout_marginTop="@dimen/minimumMargin"
+            />
+        </RelativeLayout>
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

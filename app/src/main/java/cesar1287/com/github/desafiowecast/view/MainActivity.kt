@@ -10,12 +10,14 @@ import cesar1287.com.github.desafiowecast.R
 import cesar1287.com.github.desafiowecast.utils.Status
 import cesar1287.com.github.desafiowecast.viewmodel.RssFeedViewModel
 import cesar1287.com.github.desafiowecast.adapter.RssFeedAdapter
+import cesar1287.com.github.desafiowecast.adapter.RssFeedHorizontalAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import me.toptas.rssconverter.RssItem
 
 class MainActivity : AppCompatActivity() {
 
     private var rssFeedAdapter: RssFeedAdapter? = null
+    private var rssFeedAdapterHorizontal: RssFeedHorizontalAdapter? = null
     private val rssFeedList: MutableList<RssItem> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                     resource.data?.items?.let { rssFeedListNonNull ->
                         rssFeedList.addAll(rssFeedListNonNull)
                         rssFeedAdapter?.notifyDataSetChanged()
+                        rssFeedAdapterHorizontal?.notifyDataSetChanged()
 
                         setVisibility(View.GONE, View.VISIBLE, View.GONE, View.GONE)
                     } ?: run {
@@ -68,5 +71,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
         rssFeedAdapter = RssFeedAdapter(this@MainActivity, rssFeedList)
         recyclerView.adapter = rssFeedAdapter
+
+        val layoutManagerHorizontal = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
+        recyclerViewHorizontal.layoutManager = layoutManagerHorizontal
+        rssFeedAdapterHorizontal = RssFeedHorizontalAdapter(this@MainActivity, rssFeedList)
+        recyclerViewHorizontal.adapter = rssFeedAdapterHorizontal
     }
 }
