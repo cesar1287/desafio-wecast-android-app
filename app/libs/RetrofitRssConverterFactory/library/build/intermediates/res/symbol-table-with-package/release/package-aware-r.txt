@@ -1,0 +1,2 @@
+me.toptas.rssconverter
+string app_name
